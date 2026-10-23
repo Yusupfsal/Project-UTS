@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Login WiFi Voucher & Member - AzrilWifi</title>
+  <meta name="description" content="Halaman login captive portal hotspot AzrilWifi. Masukkan kode voucher Anda atau gunakan akun member untuk terhubung ke jaringan internet cepat dan stabil.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SEMANTIC HEADER & NAVBAR COMPONENT
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">Azril<span>Wifi</span></span>
+          <span class="brand-subtitle">Internet Voucher</span>
+        </div>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="main-nav" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Beranda</a></li>
+          <li><a href="index.html#profil" class="nav-link" id="navProfil">Profil UMKM</a></li>
+          <li><a href="paket.html" class="nav-link" id="navPaket">Paket & Harga</a></li>
+          <li><a href="login.html" class="nav-link active" id="navLogin">Portal Login</a></li>
+          <li><a href="kontak.html" class="nav-link" id="navKontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action -->
+      <div class="header-actions">
+        <a href="paket.html" class="btn btn-secondary btn-sm" id="headerBeliVoucherBtn">
+          Beli Voucher
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" id="mobileMenuBtn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       PORTAL LOGIN PAGE WRAPPER (CAPTIVE PORTAL EXPERIENCE)
+       ======================================================================== -->
+  <main class="portal-page-wrapper">
+    <!-- Captive Portal Container -->
+    <div class="portal-container" id="portalContainer">
+      
+      <!-- Top Kiosk Illustration & Brand Header (Matching Design Image) -->
+      <header class="portal-top-banner">
+        <div class="portal-brand-heading">
+          <h2>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            AzrilWifi
+          </h2>
+          <p>— INTERNET VOUCHER —</p>
+          <div class="portal-brand-slogan">Internet Cepat, Harga Hemat, Aman &amp; Stabil</div>
+        </div>
+
+        <!-- 3D Shop Mockup Kios Frame -->
+        <div class="kiosk-mockup-frame">
+          <img src="assets/images/kios-azrilwifi.jpg" alt="Logo &amp; Kios Resmi AzrilWifi Internet Voucher">
+        </div>
+      </header>
+
+      <!-- Login Card View -->
+      <div id="portalLoginCard">
+        <!-- Tab Selector: Voucher (1 Kolom) vs Member (2 Kolom) -->
+        <div class="portal-tabs" role="tablist">
+          <button class="portal-tab-btn active" data-tab="tabVoucher" role="tab" aria-selected="true" id="tabBtnVoucher">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="6" y1="12" x2="10" y2="12"></line>
+              <line x1="14" y1="12" x2="18" y2="12"></line>
+            </svg>
+            <div class="tab-btn-text">
+              <h5>VOUCHER</h5>
+              <p>Masuk dengan kode voucher</p>
+            </div>
+          </button>
+
+          <button class="portal-tab-btn" data-tab="tabMember" role="tab" aria-selected="false" id="tabBtnMember">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <div class="tab-btn-text">
+              <h5>MEMBER</h5>
+              <p>Masuk dengan akun member</p>
+            </div>
+          </button>
+        </div>
+
+        <!-- Body Form Area -->
+        <div class="portal-body">
+          
+          <!-- TAB 1: VOUCHER FORM (1 Kolom Input Sesuai Konsep Perancangan) -->
+          <div class="portal-tab-pane active" id="tabVoucher" role="tabpanel">
+            <form id="voucherForm">
+              <div class="form-group">
+                <label for="voucherCode" style="display: flex; align-items: center; gap: 8px;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D66FD" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  </svg>
+                  <span>Masukkan Kode Voucher:</span>
+                </label>
+                <div class="input-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="7" y1="12" x2="7.01" y2="12"></line>
+                    <line x1="12" y1="12" x2="12.01" y2="12"></line>
+                  </svg>
+                  <input type="text" id="voucherCode" placeholder="Contoh: AZRIL24H atau KODE-1234" autocomplete="off" required>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">
+                  *Tip pengujian: Anda bisa mengetik kode voucher apa saja (misal: <code>AZRIL-WIFI</code>).
+                </div>
+              </div>
+
+              <!-- Login & Connect Button -->
+              <button type="submit" class="btn btn-primary login-btn" id="btnConnectVoucher">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                LOGIN &amp; CONNECT
+              </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider-text">
+              <span>atau</span>
+            </div>
+
+            <!-- QR Login Action Button (Opens QR scanner simulation) -->
+            <button type="button" class="qr-login-card-btn open-qr-modal-btn" id="btnQrLoginVoucher">
+              <div class="qr-card-left">
+                <div class="qr-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </div>
+                <div class="qr-card-text">
+                  <h5>LOGIN VIA QR</h5>
+                  <p>Scan QR Code untuk login otomatis</p>
+                </div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- TAB 2: MEMBER FORM (2 Kolom Input Sesuai Konsep Perancangan) -->
+          <div class="portal-tab-pane" id="tabMember" role="tabpanel">
+            <form id="memberForm">
+              <div class="form-group">
+                <label for="memberUsername">Username Member:</label>
+                <div class="input-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <input type="text" id="memberUsername" placeholder="Masukkan Username Akun" autocomplete="username" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="memberPassword">Password:</label>
+                <div class="input-icon-wrapper">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <input type="password" id="memberPassword" placeholder="Masukkan Password Akun" autocomplete="current-password" required>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 6px;">
+                  *Tip pengujian member: Masukkan sembarang username &amp; password (misal: <code>warga01</code>).
+                </div>
+              </div>
+
+              <!-- Login & Connect Button -->
+              <button type="submit" class="btn btn-primary login-btn" id="btnConnectMember">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                  <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                </svg>
+                LOGIN &amp; CONNECT
+              </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider-text">
+              <span>atau</span>
+            </div>
+
+            <!-- QR Login Action Button -->
+            <button type="button" class="qr-login-card-btn open-qr-modal-btn" id="btnQrLoginMember">
+              <div class="qr-card-left">
+                <div class="qr-icon-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </div>
+                <div class="qr-card-text">
+                  <h5>LOGIN VIA QR</h5>
+                  <p>Scan QR Code member untuk login cepat</p>
+                </div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Quick Link to Paket Table if user doesn't have voucher -->
+          <div style="text-align: center; margin-top: 1.5rem; font-size: 0.88rem; color: var(--text-muted);">
+            Belum memiliki kode voucher? <a href="paket.html" style="font-weight: 600; text-decoration: underline;">Beli di Kios / Cek Tabel Harga Paket &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Connected Success Screen (Simulated State) -->
+      <div class="connected-card" id="connectedCard">
+        <div class="connected-badge-icon">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h3 style="font-size: 1.6rem; color: var(--text-dark); margin-bottom: 0.25rem;">Terhubung ke Internet!</h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 1.5rem;">
+          Selamat berselancar di jaringan hotspot AzrilWifi yang stabil dan aman.
+        </p>
+
+        <div class="connection-details">
+          <div class="conn-row">
+            <span class="conn-label">Status Koneksi:</span>
+            <span class="conn-value" style="color: var(--success); display: inline-flex; align-items: center; gap: 6px;">
+              <span class="pulse-dot" style="display:inline-block; width:8px; height:8px; background:var(--success); border-radius:50%;"></span>
+              Online / Aktif
+            </span>
+          </div>
+          <div class="conn-row">
+            <span class="conn-label">Jenis Login:</span>
+            <span class="conn-value" id="connUserType">Voucher (AZRIL24H)</span>
+          </div>
+          <div class="conn-row">
+            <span class="conn-label">Paket Layanan:</span>
+            <span class="conn-value" id="connPackage">Harian Full 24 Jam (20 Mbps)</span>
+          </div>
+          <div class="conn-row">
+            <span class="conn-label">Alamat IP Anda:</span>
+            <span class="conn-value" id="connIp">192.168.10.154</span>
+          </div>
+          <div class="conn-row">
+            <span class="conn-label">Sisa Waktu Aktif:</span>
+            <span class="conn-value" id="connTimeRemaining" style="color: var(--primary);">23 Jam 59 Menit 45 Detik</span>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-secondary btn-block" id="disconnectBtn" style="border-color: #EF4444; color: #EF4444;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path>
+            <line x1="12" y1="2" x2="12" y2="12"></line>
+          </svg>
+          Putuskan Koneksi (Disconnect)
+        </button>
+      </div>
+
+      <!-- Bottom Feature Badges (Matching Image 1) -->
+      <footer class="portal-footer-features">
+        <div class="portal-features-row">
+          <div class="pf-item">
+            <div class="pf-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            </div>
+            <span class="pf-title">Internet Cepat</span>
+            <span class="pf-desc">Koneksi stabil</span>
+          </div>
+
+          <div class="pf-item">
+            <div class="pf-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <span class="pf-title">Aman &amp; Stabil</span>
+            <span class="pf-desc">Jaringan terpercaya</span>
+          </div>
+
+          <div class="pf-item">
+            <div class="pf-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <span class="pf-title">24 Jam Online</span>
+            <span class="pf-desc">Akses kapan saja</span>
+          </div>
+
+          <div class="pf-item">
+            <div class="pf-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="pf-title">Support</span>
+            <span class="pf-desc">Siap membantu</span>
+          </div>
+        </div>
+
+        <div class="portal-copyright">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+          Terima kasih telah menggunakan layanan kami
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       MODAL: SIMULASI SCAN QR CODE (SESUAI WIREFRAME IMAGE 2)
+       ======================================================================== -->
+  <div class="modal-overlay" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="qrModalTitle">
+    <div class="modal-content">
+      <button type="button" class="modal-close-btn" id="closeQrModal" aria-label="Tutup Jendela Modal">&times;</button>
+      
+      <div style="font-size: 0.85rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
+        Auto Connect via Kamera
+      </div>
+      <h3 id="qrModalTitle" style="font-size: 1.4rem; color: var(--text-dark); margin-bottom: 0.5rem;">
+        Scan QR Code Voucher
+      </h3>
+      <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+        Arahkan kamera ke QR Code pada struk voucher AzrilWifi Anda untuk otomatis login tanpa mengetik kode.
+      </p>
+
+      <!-- Animated QR Scanner Box -->
+      <div class="qr-scanner-box">
+        <!-- Laser Scanner Bar Animation -->
+        <div class="qr-scanner-line"></div>
+        
+        <!-- Scalable Vector QR Code Graphic -->
+        <svg width="160" height="160" viewBox="0 0 100 100" fill="#0F172A">
+          <!-- Corner Pos 1 -->
+          <rect x="5" y="5" width="28" height="28" fill="#0D66FD" rx="4"></rect>
+          <rect x="9" y="9" width="20" height="20" fill="#FFFFFF" rx="2"></rect>
+          <rect x="13" y="13" width="12" height="12" fill="#0D66FD"></rect>
+          <!-- Corner Pos 2 -->
+          <rect x="67" y="5" width="28" height="28" fill="#0D66FD" rx="4"></rect>
+          <rect x="71" y="9" width="20" height="20" fill="#FFFFFF" rx="2"></rect>
+          <rect x="75" y="13" width="12" height="12" fill="#0D66FD"></rect>
+          <!-- Corner Pos 3 -->
+          <rect x="5" y="67" width="28" height="28" fill="#0D66FD" rx="4"></rect>
+          <rect x="9" y="71" width="20" height="20" fill="#FFFFFF" rx="2"></rect>
+          <rect x="13" y="75" width="12" height="12" fill="#0D66FD"></rect>
+          <!-- Pattern Dots -->
+          <rect x="40" y="8" width="6" height="6"></rect>
+          <rect x="52" y="8" width="6" height="6"></rect>
+          <rect x="40" y="20" width="6" height="6"></rect>
+          <rect x="48" y="26" width="6" height="6"></rect>
+          <rect x="8" y="42" width="6" height="6"></rect>
+          <rect x="20" y="42" width="6" height="6"></rect>
+          <rect x="40" y="40" width="20" height="20" fill="#1E88E5" rx="3"></rect>
+          <rect x="68" y="42" width="6" height="6"></rect>
+          <rect x="80" y="42" width="6" height="6"></rect>
+          <rect x="40" y="68" width="6" height="6"></rect>
+          <rect x="52" y="68" width="6" height="6"></rect>
+          <rect x="68" y="68" width="6" height="6"></rect>
+          <rect x="80" y="76" width="6" height="6"></rect>
+          <rect x="68" y="84" width="6" height="6"></rect>
+          <rect x="48" y="80" width="6" height="6"></rect>
+        </svg>
+      </div>
+
+      <button type="button" class="btn btn-primary btn-block" id="simulateScanBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        Simulasikan Scan Sukses
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SEMANTIC FOOTER COMPONENT
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2026 <strong>AzrilWifi</strong>. Internet Cepat, Harga Hemat, Aman &amp; Stabil.</p>
+        <span class="project-tag">Project UTS Pemrograman Web - Semester Ganjil</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript File -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

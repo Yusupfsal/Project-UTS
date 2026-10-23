@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Paket & Harga Voucher Internet - AzrilWifi UMKM</title>
+  <meta name="description" content="Tabel lengkap daftar harga paket voucher internet hotspot dan langganan bulanan AzrilWifi. Tersedia paket pelajar, harian, mingguan, dan bulanan hemat.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SEMANTIC HEADER & NAVBAR COMPONENT
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-box">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+            <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+            <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+          </svg>
+        </div>
+        <div class="brand-text-group">
+          <span class="brand-title">Azril<span>Wifi</span></span>
+          <span class="brand-subtitle">Internet Voucher</span>
+        </div>
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav class="main-nav" aria-label="Navigasi Utama">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link" id="navHome">Beranda</a></li>
+          <li><a href="index.html#profil" class="nav-link" id="navProfil">Profil UMKM</a></li>
+          <li><a href="paket.html" class="nav-link active" id="navPaket">Paket & Harga</a></li>
+          <li><a href="login.html" class="nav-link" id="navLogin">Portal Login</a></li>
+          <li><a href="kontak.html" class="nav-link" id="navKontak">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action -->
+      <div class="header-actions">
+        <a href="login.html" class="nav-cta-btn" id="headerLoginBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+            <line x1="12" y1="20" x2="12.01" y2="20"></line>
+          </svg>
+          Login WiFi
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" aria-label="Buka Menu Navigasi" aria-expanded="false" id="mobileMenuBtn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       PAGE SUB-BANNER HERO
+       ======================================================================== -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="badge-pill" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);">
+        <span>Tabel Data Resmi UMKM</span>
+      </div>
+      <h1>Tabel Paket & Harga Voucher AzrilWifi</h1>
+      <p>
+        Pilih paket internet sesuai kebutuhan durasi dan anggaran Anda. Semua paket hadir tanpa batas FUP kuota dengan kecepatan stabil.
+      </p>
+      <div class="breadcrumb-nav">
+        <a href="index.html">Beranda</a> &rsaquo; <span>Daftar Paket &amp; Harga</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       MAIN SECTION: TABEL INFORMASI DATA HARGA PAKET
+       ======================================================================== -->
+  <main class="section">
+    <div class="container">
+      <!-- Section Header -->
+      <header class="section-header">
+        <span class="section-subtitle">Transparan & Terjangkau</span>
+        <h2 class="section-title">Data Tarif & Kategori Layanan Hotspot</h2>
+        <p class="section-desc">
+          Gunakan tombol kategori atau kolom pencarian di bawah ini untuk menemukan paket yang paling cocok untuk Anda.
+        </p>
+      </header>
+
+      <!-- Table Controls: Search & Category Filters -->
+      <div class="table-controls-bar">
+        <div class="filter-btn-group">
+          <button class="filter-btn active" data-filter="all">Semua Paket</button>
+          <button class="filter-btn" data-filter="pelajar">Paket Pelajar</button>
+          <button class="filter-btn" data-filter="harian">Paket Harian</button>
+          <button class="filter-btn" data-filter="mingguan">Paket Mingguan</button>
+          <button class="filter-btn" data-filter="bulanan">Member Bulanan</button>
+        </div>
+
+        <div class="search-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="tableSearchInput" placeholder="Cari nama paket, speed, harga..." aria-label="Cari data paket internet">
+        </div>
+      </div>
+
+      <!-- Semantic HTML Table Component -->
+      <div class="table-responsive">
+        <table class="custom-table" id="paketTable">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 50px; text-align: center;">No</th>
+              <th scope="col">Kode</th>
+              <th scope="col">Nama Paket Layanan</th>
+              <th scope="col">Kecepatan</th>
+              <th scope="col">Batas Kuota</th>
+              <th scope="col">Masa Aktif</th>
+              <th scope="col">Harga Voucher</th>
+              <th scope="col">Batas Perangkat</th>
+              <th scope="col">Fitur & Fasilitas</th>
+              <th scope="col" style="text-align: center;">Status & Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Row 1: Paket Pelajar 1 Jam -->
+            <tr data-category="pelajar">
+              <td style="text-align: center; font-weight: 600;">1</td>
+              <td><code>VOUCH-01</code></td>
+              <td>
+                <span class="package-name">Pelajar Kilat</span>
+                <span class="package-sub">Solusi tugas mendesak</span>
+              </td>
+              <td><span class="speed-badge">5 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>1 Jam</strong></td>
+              <td><span class="table-price-tag">Rp 2.000</span></td>
+              <td>1 Device</td>
+              <td>Browsing, Google Docs, Tugas Sekolah</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Pelajar Kilat (1 Jam)', 'Rp 2.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 2: Paket Pelajar 3 Jam -->
+            <tr data-category="pelajar" class="highlighted">
+              <td style="text-align: center; font-weight: 600;">2</td>
+              <td><code>VOUCH-02</code></td>
+              <td>
+                <span class="package-name">Pelajar Unggul</span>
+                <span class="package-sub">Favorit belajar daring</span>
+              </td>
+              <td><span class="speed-badge">8 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>3 Jam</strong></td>
+              <td><span class="table-price-tag">Rp 4.000</span></td>
+              <td>1 Device</td>
+              <td>Zoom Meeting, YouTube 720p, Sosmed</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Pelajar Unggul (3 Jam)', 'Rp 4.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 3: Paket Harian 6 Jam -->
+            <tr data-category="harian">
+              <td style="text-align: center; font-weight: 600;">3</td>
+              <td><code>VOUCH-03</code></td>
+              <td>
+                <span class="package-name">Harian Siang</span>
+                <span class="package-sub">Teman nongkrong di warkop</span>
+              </td>
+              <td><span class="speed-badge">10 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>6 Jam</strong></td>
+              <td><span class="table-price-tag">Rp 6.000</span></td>
+              <td>1 Device</td>
+              <td>Streaming Musik, Video Call, Sosmed</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Harian Siang (6 Jam)', 'Rp 6.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 4: Paket Harian 12 Jam -->
+            <tr data-category="harian">
+              <td style="text-align: center; font-weight: 600;">4</td>
+              <td><code>VOUCH-04</code></td>
+              <td>
+                <span class="package-name">Harian Setengah Hari</span>
+                <span class="package-sub">Kerja freelance & browsing</span>
+              </td>
+              <td><span class="speed-badge">15 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>12 Jam</strong></td>
+              <td><span class="table-price-tag">Rp 10.000</span></td>
+              <td>1 Device</td>
+              <td>Download Cepat, Video HD, Remote Work</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Harian Setengah Hari (12 Jam)', 'Rp 10.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 5: Paket Harian Full 24 Jam (Best Seller) -->
+            <tr data-category="harian" class="highlighted">
+              <td style="text-align: center; font-weight: 600;">5</td>
+              <td><code>VOUCH-05</code></td>
+              <td>
+                <span class="package-name">Harian Full 24 Jam</span>
+                <span class="package-sub"><span class="badge badge-warning">★ Best Seller</span></span>
+              </td>
+              <td><span class="speed-badge" style="background:#FEF3C7; color:#B45309;">20 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>24 Jam Penuh</strong></td>
+              <td><span class="table-price-tag">Rp 15.000</span></td>
+              <td>1 - 2 Device</td>
+              <td>Gaming Ping Stabil (ML/FF/PUBG), Full HD</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Harian Full 24 Jam', 'Rp 15.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 6: Paket Mingguan Reguler -->
+            <tr data-category="mingguan">
+              <td style="text-align: center; font-weight: 600;">6</td>
+              <td><code>VOUCH-06</code></td>
+              <td>
+                <span class="package-name">Mingguan Mahasiswa</span>
+                <span class="package-sub">Solusi anak kos hemat</span>
+              </td>
+              <td><span class="speed-badge">25 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>7 Hari (1 Minggu)</strong></td>
+              <td><span class="table-price-tag">Rp 40.000</span></td>
+              <td>2 Device</td>
+              <td>Prioritas Jalur Khusus, Support 24/7</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Mingguan Mahasiswa (7 Hari)', 'Rp 40.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 7: Paket Mingguan Super -->
+            <tr data-category="mingguan">
+              <td style="text-align: center; font-weight: 600;">7</td>
+              <td><code>VOUCH-07</code></td>
+              <td>
+                <span class="package-name">Mingguan Pro Gamer</span>
+                <span class="package-sub">Multi-device super cepat</span>
+              </td>
+              <td><span class="speed-badge">35 Mbps</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>7 Hari (1 Minggu)</strong></td>
+              <td><span class="table-price-tag">Rp 60.000</span></td>
+              <td>3 Device</td>
+              <td>Bypass QoS Gaming, Download Tanpa Batas</td>
+              <td style="text-align: center;">
+                <button class="btn btn-primary btn-sm" onclick="orderPackage('Mingguan Pro Gamer (7 Hari)', 'Rp 60.000')">
+                  Beli Voucher
+                </button>
+              </td>
+            </tr>
+
+            <!-- Row 8: Paket Member Rumahan 20 Mbps -->
+            <tr data-category="bulanan">
+              <td style="text-align: center; font-weight: 600;">8</td>
+              <td><code>MEMB-01</code></td>
+              <td>
+                <span class="package-name">Member Home Family</span>
+                <span class="package-sub">Langganan bulanan rumahan</span>
+              </td>
+              <td><span class="speed-badge" style="background:#E0E7FF; color:#4338CA;">20 Mbps Dedicated</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>30 Hari (1 Bulan)</strong></td>
+              <td><span class="table-price-tag">Rp 120.000</span></td>
+              <td>Hingga 5 Device</td>
+              <td>Free Router Wi-Fi, Maintenance Gratis</td>
+              <td style="text-align: center;">
+                <a href="kontak.html" class="btn btn-secondary btn-sm">Daftar Member</a>
+              </td>
+            </tr>
+
+            <!-- Row 9: Paket Member Rumahan 50 Mbps -->
+            <tr data-category="bulanan" class="highlighted">
+              <td style="text-align: center; font-weight: 600;">9</td>
+              <td><code>MEMB-02</code></td>
+              <td>
+                <span class="package-name">Member Ultra Fiber</span>
+                <span class="package-sub"><span class="badge badge-primary">★ Rekomendasi RT/RW</span></span>
+              </td>
+              <td><span class="speed-badge" style="background:#E0E7FF; color:#4338CA;">50 Mbps Dedicated</span></td>
+              <td><span class="badge badge-success">Unlimited (No FUP)</span></td>
+              <td><strong>30 Hari (1 Bulan)</strong></td>
+              <td><span class="table-price-tag">Rp 175.000</span></td>
+              <td>Hingga 10 Device</td>
+              <td>Kabel Fiber Optik Dedicated, IP Dinamis Publik</td>
+              <td style="text-align: center;">
+                <a href="kontak.html" class="btn btn-secondary btn-sm">Daftar Member</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Empty search result alert -->
+        <div class="table-empty-state" id="tableEmptyState">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <h4>Paket Tidak Ditemukan</h4>
+          <p>Maaf, kata kunci yang Anda masukkan tidak sesuai dengan paket layanan manapun. Coba gunakan kata kunci lain seperti <em>pelajar</em>, <em>harian</em>, atau <em>24 jam</em>.</p>
+        </div>
+      </div>
+
+      <!-- Cara Pembelian Voucher Guide -->
+      <section style="margin-top: 3.5rem; background: #fff; border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0D66FD" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Cara Mudah Membeli & Menggunakan Voucher AzrilWifi
+        </h3>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;" class="services-grid">
+          <div style="background: var(--bg-slate); padding: 1.5rem; border-radius: var(--radius-md);">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;">01</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Beli di Kios / Mitra Warung</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Kunjungi kios utama AzrilWifi atau warung kelontong mitra bertanda <em>"Voucher WiFi Tersedia"</em>. Bayar tunai atau QRIS untuk mendapatkan struk berisi kode voucher.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-slate); padding: 1.5rem; border-radius: var(--radius-md);">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;">02</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Hubungkan ke SSID AzrilWifi</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Nyalakan Wi-Fi pada perangkat Anda, pilih sinyal <strong>@AzrilWifi_Hotspot</strong>. Halaman Captive Portal akan otomatis muncul di layar smartphone Anda.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-slate); padding: 1.5rem; border-radius: var(--radius-md);">
+            <div style="font-weight: 800; font-size: 1.5rem; color: var(--primary); margin-bottom: 0.5rem;">03</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Masukkan Kode / Scan QR</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">
+              Masukkan kode voucher Anda atau klik opsi <em>Login via QR</em>. Tekan <strong>Login &amp; Connect</strong> dan Anda langsung terhubung ke internet!
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="login.html" class="btn btn-primary">
+            Coba Masuk ke Portal Login Sekarang &rarr;
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       SEMANTIC FOOTER COMPONENT
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <h4>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12.55a11 11 0 0 1 14.08 0"></path><line x1="12" y1="20" x2="12.01" y2="20"></line></svg>
+            AzrilWifi
+          </h4>
+          <p>
+            Penyedia layanan internet voucher hotspot dan RT/RW Net murah, cepat, aman, dan stabil untuk seluruh lapisan warga masyarakat.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="kontak.html" class="social-link" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links (Hyperlinks) -->
+        <div class="footer-col">
+          <h5>Navigasi Halaman</h5>
+          <div class="footer-links">
+            <a href="index.html">&bull; Beranda & Profil</a>
+            <a href="paket.html">&bull; Tabel Paket & Harga</a>
+            <a href="login.html">&bull; Portal Login WiFi</a>
+            <a href="kontak.html">&bull; Kontak & Lokasi Outlet</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Layanan Kami -->
+        <div class="footer-col">
+          <h5>Layanan Hotspot</h5>
+          <div class="footer-links">
+            <a href="paket.html">&bull; Paket Pelajar Hemat</a>
+            <a href="paket.html">&bull; Voucher Harian 24 Jam</a>
+            <a href="paket.html">&bull; Paket Mingguan Fleksibel</a>
+            <a href="paket.html">&bull; Member Bulanan Unlimited</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Informasi Kontak -->
+        <div class="footer-col">
+          <h5>Pusat Layanan Warga</h5>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.5rem;">
+            <strong>Kios Pusat:</strong> Jl. Melati Raya No. 12, RT 03/RW 05, Blok M, Desa Mandiri
+          </p>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.5rem;">
+            <strong>WhatsApp Hotline:</strong> 0812-3456-7890
+          </p>
+          <p style="font-size: 0.88rem; color: #94A3B8;">
+            <strong>Jam Operasional:</strong> Buka Setiap Hari (24 Jam Online)
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 <strong>AzrilWifi</strong>. Internet Cepat, Harga Hemat, Aman &amp; Stabil.</p>
+        <span class="project-tag">Project UTS Pemrograman Web - Semester Ganjil</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Javascript File -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
